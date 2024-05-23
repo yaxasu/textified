@@ -17,6 +17,7 @@ export async function getMatchesFromEmbeddings(
         vector: embeddings,
         includeMetadata: true,
       });
+      
       return queryResult.matches || [];
     } catch (error) {
       console.log("error querying embeddings", error);
