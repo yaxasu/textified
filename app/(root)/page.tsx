@@ -24,7 +24,7 @@ const Home = async () => {
   }
 
   return (
-    <div className='w-screen min-h-screen bg-gradient-to-r from-rose-100 to-teal-100 flex justify-center items-center'>
+    <div className='w-screen min-h-screen flex justify-center items-center'>
       <div className="flex flex-col items-center text-center">
         <div className='flex items-center mb-4'>
           <h1 className='mr-3 text-5xl font-semibold'>Chat with any PDF</h1>
@@ -45,12 +45,6 @@ const Home = async () => {
               </>
             )}
           </div>
-
-
-        <p className='max-w-xl mt-1 lext-lg text-slate-600'>
-          Join millions of students, researchers, and professionals to instantly
-          answer questions and understand research with Artificial Intelligence
-        </p>
 
         <div className="w-full mt-4">
           {isAuth ? (

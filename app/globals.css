@@ -74,3 +74,22 @@
       @apply bg-background text-foreground;
     }
   }
+
+  .gradient-background {
+    background: linear-gradient(300deg,rgb(232, 177, 255),#e7e7e7,#9fffdf);
+    background-size: 180% 180%;
+    animation: gradient-animation 18s ease infinite;
+    z-index: -1;
+  }
+  
+  @keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 50% 0%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }

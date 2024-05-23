@@ -22,6 +22,7 @@ export default function RootLayout({
       <Providers>
         <html lang="en">
           <body className={inter.className}>
+            <div className="gradient-background w-full h-screen fixed"></div>
             {children}
             <Toaster />
           </body>
