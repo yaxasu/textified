@@ -21,6 +21,9 @@ export default function RootLayout({
     <ClerkProvider>
       <Providers>
         <html lang="en">
+          <head>
+            <link rel="icon" href="/favicon.ico" />
+          </head>
           <body className={inter.className}>
             <div className="gradient-background w-full h-screen fixed"></div>
             {children}
