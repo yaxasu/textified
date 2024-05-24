@@ -42,11 +42,16 @@ const ChatSideBar = ({ chats, chatId, isPro }: Props) => {
                 ))}
             </div>
 
-            <div className='absolute bottom-4 left-4'>
+            <div className='absolute bottom-4 left-4 hover:cursor-pointer'>
                 <div className='flex items-center gap-2 text-sm text-slate-500 flex-wrap'>
-                    <Link href='/'>Home</Link>
+                    
                     {/* Stripe Button */}
                 </div>
+                <Link href='/'>
+                    <Button>
+                        Home
+                    </Button>
+                </Link>
                 <SubscriptionButton isPro={isPro} />
             </div>
         </div>

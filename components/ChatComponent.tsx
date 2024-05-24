@@ -40,7 +40,7 @@ const ChatComponent = ({ chatId }: Props) => {
   }, [messages]);
   return (
     <div
-      className="relative max-h-screen overflow-scroll"
+      className="relative max-h-screen flex flex-col justify"
       id="message-container"
     >
       {/* header */}
@@ -49,20 +49,23 @@ const ChatComponent = ({ chatId }: Props) => {
       </div>
 
       {/* message list */}
-      <MessageList messages={messages} isLoading={isLoading} />
+      <div className="overflow-scroll p-1">
+        <MessageList messages={messages} isLoading={isLoading} />
+      </div>
+
 
       <form
         onSubmit={handleSubmit}
         className="sticky bottom-0 inset-x-0 px-2 py-4"
       >
-        <div className="flex">
+        <div className="flex mt-2">
           <Input
             value={input}
             onChange={handleInputChange}
-            placeholder="Ask any question..."
+            placeholder="Could you explain..."
             className="w-full"
           />
-          <Button className="bg-blue-600 ml-2" type="submit">
+          <Button className="bg-gray-700 ml-2" type="submit">
             <Send className="h-4 w-4" />
           </Button>
         </div>

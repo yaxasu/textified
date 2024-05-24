@@ -16,17 +16,17 @@ type Props = {
 }
 
 const ChatPage = async ({ params: { chatId } }: Props) => {
-    const {userId} = await auth()
+    const { userId } = await auth()
 
     if (!userId) {
         return redirect('/sign-in')
     }
 
     const _chats = await db.select().from(chats).where(eq(chats.userId, userId))
-    if(!_chats){
+    if (!_chats) {
         return redirect('/')
     }
-    if(!_chats.find(chat => chat.id === parseInt(chatId))){
+    if (!_chats.find(chat => chat.id === parseInt(chatId))) {
         return redirect('/')
     }
 
@@ -38,11 +38,11 @@ const ChatPage = async ({ params: { chatId } }: Props) => {
             <div className='flex w-full max-h-screen overflow-scroll'>
                 {/* Chat Sidebar */}
                 <div className='flex-[1] max-w-xs'>
-                    <ChatSideBar chats={_chats} chatId={parseInt(chatId)} isPro={isPro}/>
+                    <ChatSideBar chats={_chats} chatId={parseInt(chatId)} isPro={isPro} />
                 </div>
 
                 {/* pdf Viewer */}
-                <div className='max-h-screen p-4 overflow-scroll flex-[5]'>
+                <div className='max-h-screen p-4 overflow-scroll flex-[5] hidden md:flex'>
                     <PDFViewer pdf_url={currentChat?.pdfUrl || ""} />
                 </div>
 
@@ -52,6 +52,7 @@ const ChatPage = async ({ params: { chatId } }: Props) => {
                 </div>
             </div>
         </div>
+
     );
 }
 
