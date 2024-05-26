@@ -29,6 +29,7 @@ const ChatComponent = ({ chatId }: Props) => {
     },
     initialMessages: data || [],
   });
+
   React.useEffect(() => {
     const messageContainer = document.getElementById("message-container");
     if (messageContainer) {
@@ -38,35 +39,30 @@ const ChatComponent = ({ chatId }: Props) => {
       });
     }
   }, [messages]);
+
   return (
-    <div
-      className="relative max-h-screen flex flex-col justify"
-      id="message-container"
-    >
-      {/* header */}
-      <div className="sticky top-0 inset-x-0 p-2 bg-none h-fit">
+    <div className="flex flex-col h-full max-h-screen">
+      {/* Header */}
+      <div className="sticky top-0 inset-x-0 p-4 bg-white shadow-md z-10 rounded-lg hidden md:block">
         <h3 className="text-xl font-bold">Chat</h3>
       </div>
 
-      {/* message list */}
-      <div className="overflow-scroll p-1">
+      {/* Message List */}
+      <div id="message-container" className="flex-1 overflow-auto p-2">
         <MessageList messages={messages} isLoading={isLoading} />
       </div>
 
-
-      <form
-        onSubmit={handleSubmit}
-        className="sticky bottom-0 inset-x-0 px-2 py-4"
-      >
-        <div className="flex mt-2">
+      {/* Input Form */}
+      <form onSubmit={handleSubmit} className="sticky bottom-0 inset-x-0 p-2">
+        <div className="flex items-center">
           <Input
             value={input}
             onChange={handleInputChange}
-            placeholder="Could you explain..."
-            className="w-full"
+            placeholder="Type your message..."
+            className="flex-1 mr-2"
           />
-          <Button className="bg-gray-700 ml-2" type="submit">
-            <Send className="h-4 w-4" />
+          <Button type="submit" className="bg-gray-700 text-white">
+            <Send className="h-5 w-5" />
           </Button>
         </div>
       </form>
