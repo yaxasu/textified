@@ -47,11 +47,11 @@ const ChatPage = async ({ params: { chatId } }: Props) => {
                 alt="menu"
                 width={32}
                 height={32}
-                className="cursor-pointer"
+                className="cursor-pointer transform scale-x-[-1]"
               />
               <h3 className="text-xl font-bold ml-">Chat</h3>
             </SheetTrigger>
-            <SheetContent className="bg-gray-900 border-none pb-10">
+            <SheetContent side='left' className="bg-gray-900 border-none pb-10">
               <ChatSideBar
                 chats={_chats}
                 chatId={parseInt(chatId)}
