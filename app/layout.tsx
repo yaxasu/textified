@@ -1,11 +1,11 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Figtree } from "next/font/google";
 import { ClerkProvider } from '@clerk/nextjs';
 import Providers from "@/components/Providers";
 import { Toaster } from 'react-hot-toast';
 
-const inter = Inter({ subsets: ["latin"] });
+const font = Figtree({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Textified",
@@ -24,8 +24,7 @@ export default function RootLayout({
           <head>
             <link rel="icon" href="/textifiedfavicon.ico" />
           </head>
-          <body className={inter.className}>
-            <div className="gradient-background w-full h-screen fixed"></div>
+          <body className={font.className}>
             {children}
             <Toaster />
           </body>

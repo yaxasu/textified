@@ -27,7 +27,7 @@ const Home = async () => {
     <div className='w-screen min-h-screen flex justify-center items-center'>
       <div className="flex flex-col items-center text-center">
         <div className='flex items-center mb-4'>
-          <h1 className={`mr-3 text-5xl font-semibold text-gray-900 drop-shadow-lg`}>Chat with any PDF</h1>
+          <h1 className={`mr-3 text-5xl font-semibold text-gray-900 drop-shadow-lg`}>Chat with a PDF</h1>
           <UserButton afterSignOutUrl='/' />
         </div>
 
@@ -52,7 +52,7 @@ const Home = async () => {
           ) :
             (<Link href='/sign-in'>
               <Button className='hover:bg-gray-700'>
-                Login to get Started!
+                Login to get Started
                 <LogIn className='w-4 h-4 ml-2' />
               </Button>
             </Link>)}

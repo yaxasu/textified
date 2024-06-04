@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import { Input } from "./ui/input";
 import { useChat } from "ai/react";
 import { Button } from "./ui/button";
 import { Send } from "lucide-react";
@@ -8,6 +7,7 @@ import MessageList from "./MessageList";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { Message } from "ai";
+import Input from "./Input";
 
 type Props = { chatId: number };
 
@@ -59,9 +59,9 @@ const ChatComponent = ({ chatId }: Props) => {
             value={input}
             onChange={handleInputChange}
             placeholder="Type your message..."
-            className="flex-1 mr-2"
+            className="flex-1 mr-2 text-white"
           />
-          <Button type="submit" className="bg-gray-700 text-white">
+          <Button type="submit" className="bg-gray-900 text-white">
             <Send className="h-5 w-5" />
           </Button>
         </div>

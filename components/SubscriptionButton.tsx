@@ -2,6 +2,7 @@
 import React from "react";
 import { Button } from "./ui/button";
 import axios from "axios";
+import { BounceLoader } from "react-spinners";
 
 type Props = { isPro: boolean };
 
@@ -19,9 +20,21 @@ const SubscriptionButton = (props: Props) => {
     }
   };
   return (
-    <Button disabled={loading} onClick={handleSubscription} className="hover:cursor-pointer" >
-      {props.isPro ? "Manage Subscriptions" : "Get Pro"}
-    </Button>
+    <div className="flex justify-center items-center">
+      <Button
+        disabled={loading}
+        onClick={handleSubscription}
+        className="hover:cursor-pointer hover:text-neutral-500"
+      >
+        {props.isPro ? (
+          "Manage Subscriptions"
+        ) : loading ? (
+          <BounceLoader color="#fff" size={20} />
+        ) : (
+          "Get Pro"
+        )}
+      </Button>
+    </div>
   );
 };
 

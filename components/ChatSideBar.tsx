@@ -14,7 +14,6 @@ type Props = {
 };
 
 const ChatSideBar = ({ chats, chatId, isPro }: Props) => {
-  const [loading, setLoading] = useState(false);
 
   return (
     <div className="flex flex-col w-full h-screen p-4 text-gray-200 bg-gray-900">
@@ -39,7 +38,7 @@ const ChatSideBar = ({ chats, chatId, isPro }: Props) => {
       </div>
       <div className="flex justify-between items-center mt-4 mb-4"> {/* Added mb-4 for bottom space */}
         <Link href="/">
-          <Button className="hover:cursor-pointer">
+          <Button className="hover:cursor-pointer hover:text-neutral-500">
             Home
           </Button>
         </Link>
