@@ -26,9 +26,9 @@ const ChatSideBar = ({ chats, chatId, isPro }: Props) => {
       <div className="flex flex-col gap-2 flex-grow overflow-y-auto">
         {chats.map(chat => (
           <Link key={chat.id} href={`/chat/${chat.id}`}>
-            <div className={cn('rounded-lg p-3 text-slate-300 flex items-center', {
-              'bg-white text-gray-700': chat.id === chatId,
-              'hover:text-white': chat.id !== chatId
+            <div className={cn('rounded-lg p-3 text-white flex items-center', {
+              'bg-white text-neutral-700': chat.id === chatId,
+              'hover:text-neutral-400 transition': chat.id !== chatId
             })}>
               <MessageCircle className="mr-2" />
               <p className="w-full overflow-hidden text-sm truncate whitespace-nowrap text-ellipsis">{chat.pdfName}</p>
@@ -38,7 +38,7 @@ const ChatSideBar = ({ chats, chatId, isPro }: Props) => {
       </div>
       <div className="flex justify-between items-center mt-4 mb-4"> {/* Added mb-4 for bottom space */}
         <Link href="/">
-          <Button className="hover:cursor-pointer hover:text-neutral-500">
+          <Button className="hover:cursor-pointer hover:text-neutral-400 transition">
             Home
           </Button>
         </Link>

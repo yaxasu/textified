@@ -24,7 +24,7 @@ const SubscriptionButton = (props: Props) => {
       <Button
         disabled={loading}
         onClick={handleSubscription}
-        className="hover:cursor-pointer hover:text-neutral-500"
+        className="hover:cursor-pointer hover:text-neutral-400 transition"
       >
         {props.isPro ? (
           "Manage Subscriptions"
